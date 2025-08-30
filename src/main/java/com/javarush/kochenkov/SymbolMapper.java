@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class SymbolMapper {
     private final String allSymbols;
-    private final Map<Character, Integer> charToIndex;
-    private final Map<Integer, Character> indexToChar;
+    public final Map<Character, Integer> charToIndex;
+    public final Map<Integer, Character> indexToChar;
 
     public SymbolMapper(String customSymbols) {
         this.allSymbols = customSymbols;
