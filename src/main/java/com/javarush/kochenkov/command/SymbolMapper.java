@@ -1,4 +1,6 @@
-package com.javarush.kochenkov;
+package com.javarush.kochenkov.command;
+
+import com.javarush.kochenkov.consts.Keywords;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,15 +10,8 @@ public class SymbolMapper {
     public final Map<Character, Integer> charToIndex;
     public final Map<Integer, Character> indexToChar;
 
-    public SymbolMapper(String customSymbols) {
-        this.allSymbols = customSymbols;
-        this.charToIndex = new HashMap<>();
-        this.indexToChar = new HashMap<>();
-        associatingSymbols();
-    }
-
     public SymbolMapper() {
-        this.allSymbols = Constants.ALL_SYMBOLS;
+        this.allSymbols = Keywords.ALL_SYMBOLS;
         this.charToIndex = new HashMap<>();
         this.indexToChar = new HashMap<>();
         associatingSymbols();

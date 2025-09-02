@@ -1,9 +1,9 @@
-package com.javarush.kochenkov;
+package com.javarush.kochenkov.command;
 
 import java.io.*;
 
 public class Encrypt {
-    private final SymbolMapper symbolMapper;
+    SymbolMapper symbolMapper;
     private static final int BUFFER_SIZE = 8192;
 
     public Encrypt(SymbolMapper symbolMapper) {
@@ -12,7 +12,6 @@ public class Encrypt {
 
     private char encryptChar(char character, int shift) {
         Integer originalIndex = symbolMapper.charToIndex.get(character);
-
         if (originalIndex != null) {
             int totalSymbols = symbolMapper.charToIndex.size();
             int newIndex = (originalIndex + shift) % totalSymbols;
